@@ -4,26 +4,26 @@ error: `#[snafu::report]` may only be used on functions
 4 | const NOT_HERE: u8 = 42;
   | ^^^^^
 
-error[E0277]: the trait bound `(): __InternalExtractErrorType` is not satisfied
+error[E0277]: the trait bound `(): snafu::__InternalExtractErrorType` is not satisfied
  --> tests/ui/report.rs:6:1
   |
 6 | #[snafu::report]
-  | ^^^^^^^^^^^^^^^^ the trait `__InternalExtractErrorType` is not implemented for `()`
+  | ^^^^^^^^^^^^^^^^ the trait `snafu::__InternalExtractErrorType` is not implemented for `()`
   |
-help: the trait `__InternalExtractErrorType` is implemented for `Result<T, E>`
+help: the trait `snafu::__InternalExtractErrorType` is implemented for `Result<T, E>`
  --> $SNAFU/src/report.rs
   |
   | impl<T, E> __InternalExtractErrorType for core::result::Result<T, E> {
   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   = note: this error originates in the attribute macro `snafu::report` (in Nightly builds, run with -Z macro-backtrace for more info)
 
-error[E0277]: the trait bound `ExitCode: __InternalExtractErrorType` is not satisfied
+error[E0277]: the trait bound `ExitCode: snafu::__InternalExtractErrorType` is not satisfied
  --> tests/ui/report.rs:9:1
   |
 9 | #[snafu::report]
-  | ^^^^^^^^^^^^^^^^ the trait `__InternalExtractErrorType` is not implemented for `ExitCode`
+  | ^^^^^^^^^^^^^^^^ the trait `snafu::__InternalExtractErrorType` is not implemented for `ExitCode`
   |
-help: the trait `__InternalExtractErrorType` is implemented for `Result<T, E>`
+help: the trait `snafu::__InternalExtractErrorType` is implemented for `Result<T, E>`
  --> $SNAFU/src/report.rs
   |
   | impl<T, E> __InternalExtractErrorType for core::result::Result<T, E> {
