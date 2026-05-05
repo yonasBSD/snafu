@@ -318,7 +318,7 @@ pub use crate::error_chain::*;
 mod report;
 #[cfg(feature = "alloc")]
 pub use report::CleanedErrorText;
-pub use report::{Report, __InternalExtractErrorType};
+pub use report::{__InternalExtractErrorType, Report};
 
 #[doc = include_str!("Snafu.md")]
 #[doc(alias(
